@@ -12,6 +12,15 @@ function getCovidStats() {
 	fetch('https://coronavirus-tracker-api.herokuapp.com/v2/locations')
 	.then(function(resp) { return resp.json() })
 	.then(function(data) {
+
+
+		let confirmedCases0 = data.latest.confirmed;
+		let deaths0 = data.latest.deaths;
+	
+		document.getElementById('cases0').innerHTML = confirmedCases0.toLocaleString('en');
+		document.getElementById('deaths0').innerHTML = deaths0.toLocaleString('en');
+		document.getElementById('percent0').innerHTML = ((Number(deaths0)/Number(confirmedCases0))*100).toLocaleString("en", {minimumFractionDigits: 2, maximumFractionDigits: 2}) + "%";
+
 		let population1 = data.locations[225].country_population;
 		let update1 = data.locations[225].last_updated;
 		let confirmedCases1 = data.locations[225].latest.confirmed;

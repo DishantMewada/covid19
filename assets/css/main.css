@@ -2314,6 +2314,11 @@ input, select, textarea {
             #main > section.eleven {
 				background-color: #81918E;
 				background-image: url("../../images/germany.jpg");
+			}
+			
+			#main > section.twelve {
+				background-color: #81918E;
+				background-image: url("../../images/world.jpg");
             }
 /* Wide */
 
